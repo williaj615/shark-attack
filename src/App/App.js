@@ -1,28 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import studentData from '../helpers/data/studentData';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button className='btn btn-danger'>SHARK ATTACK</button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    studentSurvivors: [],
+    deceasedStudents: [],
+  }
+
+  componentDidMount() {
+    const aliveStudents = studentData.livingStudents();
+    this.setState({ studentSurvivors: aliveStudents });
+  }
+
+  killStudent = (studentId) => {
+    studentData.followTheLight(studentId);
+    const deadStudents = studentData.dearlyBeloved();
+    const aliveStudents = studentData.livingStudents();
+    this.setState({ studentSurvivors: aliveStudents });
+    this.setState({ deceasedStudents: deadStudents });
+  }
+
+  render() {
+    return (
+      <div className="App">
+
+      </div>
+    );
+  }
 }
-
 export default App;

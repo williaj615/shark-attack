@@ -123,19 +123,19 @@ const students = [
     id: 'student21',
     firstName: 'Monica',
     lastName: 'Djunaidi',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student22',
     firstName: 'Randy',
     lastName: 'Tate',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student23',
     firstName: 'Raymond',
     lastName: 'Arceneaux',
-    isDead: false,
+    isDead: true,
   },
 ];
 

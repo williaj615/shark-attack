@@ -3,7 +3,7 @@ import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import studentData from '../helpers/data/studentData';
 import SharkTank from '../components/SharkTank/SharkTank';
-// import GraveYard from '../components/GraveYard/GraveYard';
+import GraveYard from '../components/GraveYard/GraveYard';
 
 class App extends React.Component {
   state = {
@@ -13,10 +13,12 @@ class App extends React.Component {
 
   componentDidMount() {
     const aliveStudents = studentData.livingStudents();
+    const deadStudents = studentData.dearlyBeloved();
     this.setState({ studentSurvivors: aliveStudents });
+    this.setState({ deceasedStudents: deadStudents });
   }
 
-  // killStudent = (studentId) => {
+  // killStudentEvent = (studentId) => {
   //   studentData.followTheLight(studentId);
   //   const deadStudents = studentData.dearlyBeloved();
   //   const aliveStudents = studentData.livingStudents();
@@ -29,7 +31,8 @@ class App extends React.Component {
       <div className="App">
         SHARKS ARE SCARY
         <SharkTank propStudents={this.state.studentSurvivors}/>
-        {/* <GraveYard propStudents={this.state.deceasedStudents}/> */}
+        <GraveYard propStudents={this.state.deceasedStudents}/>
+        <div className="btn btn-danger" onClick={this.killStudentEvent}>SHARK ATTACK!!</div>
       </div>
     );
   }

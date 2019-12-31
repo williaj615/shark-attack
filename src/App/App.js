@@ -18,13 +18,17 @@ class App extends React.Component {
     this.setState({ deceasedStudents: deadStudents });
   }
 
-  // killStudentEvent = (studentId) => {
-  //   studentData.followTheLight(studentId);
-  //   const deadStudents = studentData.dearlyBeloved();
-  //   const aliveStudents = studentData.livingStudents();
-  //   this.setState({ studentSurvivors: aliveStudents });
-  //   this.setState({ deceasedStudents: deadStudents });
-  // }
+  killStudentEvent = () => {
+    const studentsLeft = studentData.livingStudents();
+    const randomLivingStudent = studentsLeft[Math.floor(Math.random() * studentsLeft.length)];
+
+    studentData.followTheLight(randomLivingStudent.id);
+
+    const deadStudents = studentData.dearlyBeloved();
+    const aliveStudents = studentData.livingStudents();
+    this.setState({ studentSurvivors: aliveStudents });
+    this.setState({ deceasedStudents: deadStudents });
+  }
 
   render() {
     return (

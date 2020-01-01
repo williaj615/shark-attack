@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -35,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.shark-tank-wrapper {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  width: 100%;
+}
+.grave-yard-wrapper {
+width: 100%;
+margin-left: 40%;
+margin-right: 10%;
+}
+.heading1 {
+  font-family: 'Nosifer', cursive;
+  color: darkred;
+  margin-top: 2em;
+}
+.heading2 {
+  font-family: 'Headland One', serif;
+  margin-left: 8em;
+}
+

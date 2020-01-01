@@ -33,10 +33,16 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        SHARKS ARE SCARY
-        <SharkTank propStudents={this.state.studentSurvivors}/>
-        <GraveYard propStudents={this.state.deceasedStudents}/>
+        <h1>SHARKS ARE SCARY</h1>
         <div className="btn btn-danger" onClick={this.killStudentEvent}>SHARK ATTACK!!</div>
+        <h2 className="heading1 text-left ml-5">Neighborhood Pool</h2>
+        <div className="shark-tank-wrapper">
+        <SharkTank propStudents={this.state.studentSurvivors}/>
+        </div>
+        <h2 className="heading2 text-center">Rest In Peace</h2>
+        <div className="grave-yard-wrapper">
+        <GraveYard propStudents={this.state.deceasedStudents}/>
+        </div>
       </div>
     );
   }

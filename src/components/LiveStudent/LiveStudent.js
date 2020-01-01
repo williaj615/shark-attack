@@ -10,7 +10,7 @@ class LiveStudent extends React.Component {
   render() {
     const { student } = this.props;
     return (
-      <div className="card">
+      <div className="card student-card">
         <h5>I'm alive!</h5>
         <p className="student-name">{student.firstName} {student.lastName}</p>
       </div>

@@ -10,7 +10,7 @@ class GraveStone extends React.Component {
   render() {
     const { student } = this.props;
     return (
-      <div className="card">
+      <div className="card grave-stone">
         <h5>RIP</h5>
         <p className="student-name">{student.firstName} {student.lastName}</p>
       </div>
